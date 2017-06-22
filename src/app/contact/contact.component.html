@@ -1,0 +1,32 @@
+<section>
+  <div class="header">
+    <div>
+      <h2 *ngIf="!selectedContact">New Contact</h2>
+    </div>
+    <button *ngIf="!selectedContact" (click)="addContact()">Save</button>
+    <h2 *ngIf="selectedContact">Contact: {{selectedContact.name}}</h2>
+    <button *ngIf="selectedContact" (click)="updateContact(selectedContact)">Update</button>
+  </div>
+  <div>
+    <input id="name" #name type="text" required maxlength="16" value="{{selectedContact? selectedContact.name:  ''}}" [(ngModel)]="contactName" placeholder="Name">
+  </div>
+  <div>
+    <input id="last_name" #last_name type="text" maxlength="16" value="{{selectedContact? selectedContact.lastName:  ''}}" [(ngModel)]="contactLastName" placeholder="Last Name">
+  </div>
+  <div>
+    <textarea id="address" #address type="text" maxlength="255" cols="23" rows="3" value="{{selectedContact? selectedContact.address: ''}}" [(ngModel)]="contactAddress" placeholder="Address"></textarea>
+  </div>
+  <div *ngIf="selectedContact">
+    <app-number [numbers]="selectedContact.numbers"></app-number>
+  </div>
+  <div *ngIf="!selectedContact">
+    <app-number [numbers]="numbers"></app-number>
+  </div>
+
+  <div *ngIf="selectedContact">
+    <app-number-list [numbers]="selectedContact.numbers"></app-number-list>
+  </div>
+  <div *ngIf="!selectedContact">
+    <app-number-list [numbers]="numbers"></app-number-list>
+  </div>
+</section>

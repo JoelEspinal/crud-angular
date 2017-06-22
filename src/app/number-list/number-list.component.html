@@ -1,0 +1,11 @@
+<section>
+  <ul>
+    <li *ngFor="let number of this.numbers">
+      <input disabled value="{{number.number}}" />
+      <select *ngIf="number.category">
+        <option>{{number.category}}</option>
+      </select>
+      <button type="button" (click)="remove(number)">remove</button>
+    </li>
+  </ul>
+</section>

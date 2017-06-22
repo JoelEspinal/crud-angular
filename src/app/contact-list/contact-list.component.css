@@ -1,0 +1,30 @@
+.verticalLine {
+  border-color: #03a9f4;
+  border-style: solid;
+  border-width: 1px;
+}
+
+h2 {
+  color: white;
+  padding-left: 5%;
+  text-decoration-style: solid;
+  font-size: x-large;
+  background-color: #03a9f4;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+section {
+  background-color: #03a9f4;
+  width: 100%;
+  border-color: #81d4fa;
+  border-style: solid;
+  border-width: 1px;
+}
+
+p {
+  color: white;
+  padding-left: 5%;
+}

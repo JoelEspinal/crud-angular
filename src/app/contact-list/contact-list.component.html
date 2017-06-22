@@ -1,0 +1,10 @@
+<div class="verticalLine">
+  <section *ngFor="let contact of this.contacts">
+    <div>
+      <p (click)="selectContact(contact)">{{contact.name}} {{contact.lastName}}</p><button (click)="delete(contact)">delete</button>
+    </div>
+    <div *ngIf="contact.numbers != undefined && contact.numbers[0] != undefined">
+      <p>{{contact.numbers[0].number}}</p>
+    </div>
+  </section>
+</div>
